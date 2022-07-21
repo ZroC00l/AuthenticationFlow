@@ -27,5 +27,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginVertical: 5, // so there is space inbetween the input textfields
   },
-  input: {},
+  input: {
+    padding: 10,
+  },
 });
