@@ -4,6 +4,7 @@ import {
   View,
   Image,
   useWindowDimensions,
+  ScrollView,
 } from "react-native";
 import React, { useState } from "react";
 import Logo from "../../assets/images/logo2.png";
@@ -35,39 +36,41 @@ const SignInScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <View style={styles.root}>
-      <Image source={Logo} style={[styles.logo, { height: height * 0.3 }]} />
-      <Form placeholder="Email" value={email} setValue={setEmail} />
-      <Form
-        placeholder="Password"
-        value={password}
-        setValue={setPassword}
-        secureTextEntry={true}
-      />
-      <CustomButton text="Sign In" onPress={onSignInPressed} type="PRIMARY" />
-      <CustomButton
-        text="Forgot Password?"
-        onPress={onForgotPasswordPressed}
-        type="TERTIARY"
-      />
-      <CustomButton
-        text="Sign in with Google"
-        onPress={onSignInGooglePressed}
-        bgColor="#FAE9EA"
-        fgColor="#DD4D44"
-      />
-      <CustomButton
-        text="Sign in with Apple"
-        onPress={onSignInApplePressed}
-        bgColor="#e3e3e3"
-        fgColor="#363636"
-      />
-      <CustomButton
-        text="Dont have an account? Sign up"
-        type="TERTIARY"
-        onPress={onSignUpPressed}
-      />
-    </View>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.root}>
+        <Image source={Logo} style={[styles.logo, { height: height * 0.3 }]} />
+        <Form placeholder="Email" value={email} setValue={setEmail} />
+        <Form
+          placeholder="Password"
+          value={password}
+          setValue={setPassword}
+          secureTextEntry={true}
+        />
+        <CustomButton text="Sign In" onPress={onSignInPressed} type="PRIMARY" />
+        <CustomButton
+          text="Forgot Password?"
+          onPress={onForgotPasswordPressed}
+          type="TERTIARY"
+        />
+        <CustomButton
+          text="Sign in with Google"
+          onPress={onSignInGooglePressed}
+          bgColor="#FAE9EA"
+          fgColor="#DD4D44"
+        />
+        <CustomButton
+          text="Sign in with Apple"
+          onPress={onSignInApplePressed}
+          bgColor="#e3e3e3"
+          fgColor="#363636"
+        />
+        <CustomButton
+          text="Don't have an account? Sign up"
+          type="TERTIARY"
+          onPress={onSignUpPressed}
+        />
+      </View>
+    </ScrollView>
   );
 };
 
