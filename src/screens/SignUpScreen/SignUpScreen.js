@@ -70,6 +70,11 @@ const SignUpScreen = () => {
           </Text>
         </Text>
         <SocialSignInUpButtons />
+        <CustomButton
+          text="Already have an account? Sign in"
+          mode="TERTIARY"
+          onPress={onSignUpPressed}
+        />
       </View>
     </ScrollView>
   );
