@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import Logo from "../../../assets/images/logo2.png";
 import Form from "../../components/Form";
 import CustomButton from "../../components/CustomButton";
+import SocialSignInUpButtons from "../SocialSignInUpButtons";
 //import { Icon } from "react-native-elements";
 
 const onSignInPressed = () => {
@@ -22,14 +23,6 @@ const onForgotPasswordPressed = () => {
 
 const onSignUpPressed = () => {
   console.warn("Sign Up Pressed");
-};
-
-const onSignInGooglePressed = () => {
-  console.warn("Sign In with Google Pressed");
-};
-
-const onSignInApplePressed = () => {
-  console.warn("Sign In with Apple Pressed");
 };
 
 const SignInScreen = () => {
@@ -59,18 +52,7 @@ const SignInScreen = () => {
           onPress={onForgotPasswordPressed}
           mode="TERTIARY"
         />
-        <CustomButton
-          text="Sign in with Google"
-          onPress={onSignInGooglePressed}
-          bgColor="#FAE9EA"
-          fgColor="#DD4D44"
-        />
-        <CustomButton
-          text="Sign in with Apple"
-          onPress={onSignInApplePressed}
-          bgColor="#e3e3e3"
-          fgColor="#363636"
-        />
+        <SocialSignInUpButtons />
         <CustomButton
           text="Don't have an account? Sign up"
           mode="TERTIARY"

@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import React, { useState } from "react";
 import Form from "../../components/Form";
 import CustomButton from "../../components/CustomButton";
+import SocialSignInUpButtons from "../SocialSignInUpButtons";
 import { Icon } from "react-native-elements";
 
 const onSignUpPressed = () => {
@@ -12,14 +13,6 @@ const onTermsServicePressed = () => {
 };
 const onPrivacyPolicyPressed = () => {
   console.warn("Privacy Policy Pressed");
-};
-
-const onGoogleSignUpPressed = () => {
-  console.warn("Sign Up with Google Pressed");
-};
-
-const onAppleSignUpPressed = () => {
-  console.warn("Sign Up with Apple Pressed");
 };
 
 const SignUpScreen = () => {
@@ -76,18 +69,7 @@ const SignUpScreen = () => {
             Privacy Policy
           </Text>
         </Text>
-        <CustomButton
-          text="Sign up with Google"
-          bgColor="#FAE9EA"
-          fgColor="#DD4D44"
-          onPress={onGoogleSignUpPressed}
-        />
-        <CustomButton
-          text="Sign up with Apple"
-          bgColor="#e3e3e3"
-          fgColor="#363636"
-          onPress={onAppleSignUpPressed}
-        />
+        <SocialSignInUpButtons />
       </View>
     </ScrollView>
   );
