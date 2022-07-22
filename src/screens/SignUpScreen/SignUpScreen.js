@@ -1,14 +1,8 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  useWindowDimensions,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import React, { useState } from "react";
 import Form from "../../components/Form";
 import CustomButton from "../../components/CustomButton";
+import { Icon } from "react-native-elements";
 
 const onSignUpPressed = () => {
   console.warn("Sign Up Pressed");
@@ -20,6 +14,14 @@ const onPrivacyPolicyPressed = () => {
   console.warn("Privacy Policy Pressed");
 };
 
+const onGoogleSignUpPressed = () => {
+  console.warn("Sign Up with Google Pressed");
+};
+
+const onAppleSignUpPressed = () => {
+  console.warn("Sign Up with Apple Pressed");
+};
+
 const SignUpScreen = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -29,6 +31,15 @@ const SignUpScreen = () => {
   return (
     <ScrollView>
       <View style={styles.root}>
+        <View style={styles.navIconView}>
+          <Icon
+            type="material-community"
+            name="arrow-left"
+            size={30}
+            color="white"
+            style={{ backgroundColor: "#828F0E", borderRadius: 5 }}
+          />
+        </View>
         <Text style={styles.title}>Create an account</Text>
         <Form
           placeholder="UserName"
@@ -65,6 +76,18 @@ const SignUpScreen = () => {
             Privacy Policy
           </Text>
         </Text>
+        <CustomButton
+          text="Sign up with Google"
+          bgColor="#FAE9EA"
+          fgColor="#DD4D44"
+          onPress={onGoogleSignUpPressed}
+        />
+        <CustomButton
+          text="Sign up with Apple"
+          bgColor="#e3e3e3"
+          fgColor="#363636"
+          onPress={onAppleSignUpPressed}
+        />
       </View>
     </ScrollView>
   );
@@ -95,5 +118,9 @@ const styles = StyleSheet.create({
   },
   link: {
     color: "blue",
+  },
+  navIconView: {
+    width: "100%",
+    flexDirection: "row",
   },
 });
