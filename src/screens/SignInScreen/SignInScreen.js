@@ -44,7 +44,7 @@ const SignInScreen = () => {
           placeholder="Email"
           value={email}
           setValue={setEmail}
-          name="account"
+          name="email"
         />
         <Form
           placeholder="Password"
