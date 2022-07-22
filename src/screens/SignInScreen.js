@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import Logo from "../../assets/images/logo2.png";
 import Form from "../components/Form";
 import CustomButton from "../components/CustomButton";
+import { Icon } from "react-native-elements";
 
 const onSignInPressed = () => {
   console.warn("Sign In Pressed");
@@ -39,18 +40,24 @@ const SignInScreen = () => {
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
         <Image source={Logo} style={[styles.logo, { height: height * 0.3 }]} />
-        <Form placeholder="Email" value={email} setValue={setEmail} />
+        <Form
+          placeholder="Email"
+          value={email}
+          setValue={setEmail}
+          name="account"
+        />
         <Form
           placeholder="Password"
           value={password}
           setValue={setPassword}
           secureTextEntry={true}
+          name="lock"
         />
-        <CustomButton text="Sign In" onPress={onSignInPressed} type="PRIMARY" />
+        <CustomButton text="Sign In" onPress={onSignInPressed} mode="PRIMARY" />
         <CustomButton
           text="Forgot Password?"
           onPress={onForgotPasswordPressed}
-          type="TERTIARY"
+          mode="TERTIARY"
         />
         <CustomButton
           text="Sign in with Google"
@@ -66,7 +73,7 @@ const SignInScreen = () => {
         />
         <CustomButton
           text="Don't have an account? Sign up"
-          type="TERTIARY"
+          mode="TERTIARY"
           onPress={onSignUpPressed}
         />
       </View>
