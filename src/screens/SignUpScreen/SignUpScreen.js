@@ -7,9 +7,9 @@ import {
   ScrollView,
 } from "react-native";
 import React, { useState } from "react";
-import Logo from "../../assets/images/logo2.png";
-import Form from "../components/Form";
-import CustomButton from "../components/CustomButton";
+import Logo from "../../../assets/images/logo2.png";
+import Form from "../../components/Form";
+import CustomButton from "../../components/CustomButton";
 
 const onSignUpPressed = () => {};
 
