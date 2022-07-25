@@ -8,6 +8,14 @@ const onConfirmPressed = () => {
   console.warn("Sign Up Pressed");
 };
 
+const onGoBackPressed = () => {
+  console.warn("Go Back Pressed");
+};
+
+const onResendCodePressed = () => {
+  console.warn("Resend Code Pressed");
+};
+
 const EmailConfirmationScreen = () => {
   const [otpCode, setOtpCode] = useState("");
 
@@ -16,7 +24,7 @@ const EmailConfirmationScreen = () => {
       <View style={styles.root}>
         <Text style={styles.title}>Confirm Sign Up</Text>
         <Form
-          placeholder="Confirmation Code"
+          placeholder="Enter Confirmation Code"
           value={otpCode}
           setValue={setOtpCode}
           name="account-key"
@@ -24,11 +32,20 @@ const EmailConfirmationScreen = () => {
         <CustomButton
           text="Confirm"
           onPress={onConfirmPressed}
-          bgColor="orange"
+          bgColor="blue"
           fgColor="white"
         />
-        <CustomButton text="Resend Code" mode="TERTIARY" />
-        <CustomButton text="Go Back" mode="TERTIARY" />
+        <CustomButton
+          text="Resend Code"
+          onPress={onResendCodePressed}
+          mode="SECONDARY"
+          bgColor="white"
+        />
+        <CustomButton
+          text="Back to Sign In"
+          mode="TERTIARY"
+          onPress={onGoBackPressed}
+        />
       </View>
     </ScrollView>
   );
