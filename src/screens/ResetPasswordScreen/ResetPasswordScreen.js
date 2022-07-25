@@ -4,43 +4,35 @@ import Form from "../../components/Form";
 import CustomButton from "../../components/CustomButton";
 import { Icon } from "react-native-elements";
 
-const onConfirmPressed = () => {
-  console.warn("Sign Up Pressed");
-};
-
 const onGoBackPressed = () => {
   console.warn("Go Back Pressed");
 };
 
-const onResendCodePressed = () => {
+const onResetPressed = () => {
   console.warn("Resend Code Pressed");
 };
 
 const EmailConfirmationScreen = () => {
-  const [otpCode, setOtpCode] = useState("");
+  const [email, setEmail] = useState("");
 
   return (
     <ScrollView>
       <View style={styles.root}>
-        <Text style={styles.title}>Confirm Sign Up</Text>
+        <Text style={styles.title}>Reset your password</Text>
+
         <Form
-          placeholder="Enter Confirmation Code"
-          value={otpCode}
-          setValue={setOtpCode}
-          name="account-key"
+          placeholder="Enter your email"
+          value={email}
+          setValue={setEmail}
+          name="account"
         />
         <CustomButton
-          text="Confirm"
-          onPress={onConfirmPressed}
+          text="Reset"
+          onPress={onResetPressed}
           bgColor="blue"
           fgColor="white"
         />
-        <CustomButton
-          text="Resend Code"
-          onPress={onResendCodePressed}
-          mode="SECONDARY"
-          bgColor="white"
-        />
+
         <CustomButton
           text="Back to Sign In"
           mode="TERTIARY"
@@ -56,14 +48,13 @@ export default EmailConfirmationScreen;
 const styles = StyleSheet.create({
   root: {
     alignItems: "center",
-    padding: 20,
+    padding: 30,
   },
   title: {
     fontWeight: "bold",
     fontSize: 24,
     color: "white",
     margin: 10,
-    paddingBottom: 10,
   },
   textBody: {
     marginVertical: 10,

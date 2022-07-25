@@ -5,11 +5,13 @@ import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import SignInScreen from "./src/screens/SignInScreen/SignInScreen";
 import SignUpScreen from "./src/screens/SignUpScreen/SignUpScreen";
 import EmailConfirmationScreen from "./src/screens/EmailConfirmationScreen";
+import ResetPasswordScreen from "./src/screens/ResetPasswordScreen";
+import NewPasswordScreen from "./src/screens/NewPasswordScreen";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.root}>
-      <EmailConfirmationScreen />
+      <NewPasswordScreen />
     </SafeAreaView>
   );
 }
