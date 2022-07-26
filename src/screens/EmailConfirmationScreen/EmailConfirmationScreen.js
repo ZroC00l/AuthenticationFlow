@@ -22,7 +22,7 @@ const EmailConfirmationScreen = () => {
   return (
     <ScrollView>
       <View style={styles.root}>
-        <Text style={styles.title}>Confirm Sign Up</Text>
+        <Text style={styles.title}>Confirm your email</Text>
         <Form
           placeholder="Enter Confirmation Code"
           value={otpCode}

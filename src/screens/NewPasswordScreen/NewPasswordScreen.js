@@ -12,7 +12,7 @@ const onResetPressed = () => {
   console.warn("Resend Code Pressed");
 };
 
-const EmailConfirmationScreen = () => {
+const NewPasswordScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -58,7 +58,7 @@ const EmailConfirmationScreen = () => {
   );
 };
 
-export default EmailConfirmationScreen;
+export default NewPasswordScreen;
 
 const styles = StyleSheet.create({
   root: {
