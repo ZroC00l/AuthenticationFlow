@@ -8,13 +8,13 @@ const onGoBackPressed = () => {
   console.warn("Go Back Pressed");
 };
 
-const onResetPressed = () => {
+const onSubmitPressed = () => {
   console.warn("Resend Code Pressed");
 };
 
 const NewPasswordScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [code, setCode] = useState("");
+  const [newpassword, setNewPassword] = useState("");
 
   return (
     <ScrollView>
@@ -26,9 +26,9 @@ const NewPasswordScreen = () => {
         </View>
 
         <Form
-          placeholder="Enter your email"
-          value={email}
-          setValue={setEmail}
+          placeholder="Enter confirmation code"
+          value={code}
+          setValue={setCode}
           name="account"
         />
         <View style={styles.labelContainer}>
@@ -38,12 +38,12 @@ const NewPasswordScreen = () => {
         <Form
           placeholder="Enter your new password"
           name="lock"
-          value={password}
-          setValue={setPassword}
+          value={newpassword}
+          setValue={setNewPassword}
         />
         <CustomButton
-          text="Reset"
-          onPress={onResetPressed}
+          text="Submit"
+          onPress={onSubmitPressed}
           bgColor="blue"
           fgColor="white"
         />
