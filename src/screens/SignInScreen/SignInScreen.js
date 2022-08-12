@@ -12,23 +12,28 @@ import Form from "../../components/Form";
 import CustomButton from "../../components/CustomButton";
 import SocialSignInUpButtons from "../SocialSignInUpButtons";
 //import { Icon } from "react-native-elements";
-
-const onSignInPressed = () => {
-  console.warn("Sign In Pressed");
-};
-
-const onForgotPasswordPressed = () => {
-  console.warn("Forgot Password Pressed");
-};
-
-const onSignUpPressed = () => {
-  console.warn("Sign Up Pressed");
-};
+import { useNavigation } from "@react-navigation/native";
 
 const SignInScreen = () => {
   const { height } = useWindowDimensions();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigation = useNavigation();
+
+  const onSignInPressed = () => {
+    console.warn("Sign In Pressed");
+    //validate user
+
+    navigation.navigate("HomeScreen");
+  };
+
+  const onForgotPasswordPressed = () => {
+    console.warn("Forgot Password Pressed");
+  };
+
+  const onSignUpPressed = () => {
+    console.warn("Sign Up Pressed");
+  };
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
